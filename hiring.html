@@ -1,0 +1,77 @@
+<!Doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Project</title>
+	<link rel="stylesheet" type="text/css" href="css/lightanim.css">
+</head>
+<body>
+	<div class="page animated fadeIn">
+		<div class="pointer"></div>
+		<div class="container">
+			<div class="header">
+				<div class="circle bg-green txt-white icon-briefcase"></div>
+				<div class="title">Hiring</div>
+				<div class="btn-container align-right">
+					<div class="btn align-right icon-download"></div>
+					<div class="btn align-right icon-home"></div>
+				</div>
+			</div>
+			<div class="content sm-full">
+				<div class="flexbox sm-full" id="hiring-content">
+					<div class="form">
+						<ul role="hiring">
+							<li>
+								<p>Job Title</p>
+								<input type="text" autofocus>
+								<button class="enterBtn">
+									<span class="icon-play3"></span>
+								</button>
+							</li>
+							<li>
+								<p>Location</p>
+								<input type="text">
+								<button class="enterBtn">
+									<span class="icon-play3"></span>
+								</button>
+							</li>
+							<li>
+								<p>Organisation Name</p>
+								<input type="text">
+								<button class="enterBtn">
+									<span class="icon-play3"></span>
+								</button>
+							</li>
+							<li>
+								<p>Job Description</p>
+								<textarea type="textarea" role="jobDesc"></textarea>
+								<button class="enterBtn">
+									<span class="icon-play3"></span>
+								</button>
+							</li>
+							<li>
+								<p>Contact Number</p>
+								<input type="phone">
+							</li>
+						</ul>
+						<button class="hire-submit" data-response=" " >Hire Me</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer" onresize="toggleFooter();">
+				<div class="menu lg-hide sm-blockbox">^</div>
+				<ul class="tabs flexbox sm-blockbox">
+					<li role="Details">Details</li>
+					<li role="Skills">Skills</li>
+					<li role="Achievements">Achievements</li>
+					<li role="Projects">Projects</li>
+					<li class="active-tab" role="Hiring">Hiring</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Page ends -->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
+
