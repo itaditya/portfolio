@@ -1,0 +1,3 @@
+{
+	"html":"<div class=\"footer\" onresize=\"toggleFooter();\">\n\t\t\t\t<div class=\"menu lg-hide sm-blockbox\">^</div>\n\t\t\t\t<ul class=\"tabs flexbox sm-blockbox\">\n\t\t\t\t\t<li class=\"active-tab\" role=\"Details\">Details</li>\n\t\t\t\t\t<li role=\"Skills\">Skills</li>\n\t\t\t\t\t<li role=\"Achievements\">Achievements</li>\n\t\t\t\t\t<li role=\"Projects\">Projects</li>\n\t\t\t\t\t<li role=\"Hiring\">Hiring</li>\n\t\t\t\t</ul>\n\t\t\t</div>"
+}

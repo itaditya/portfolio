@@ -4,6 +4,7 @@ body,html{
 }
 .page {
 	width: 100%;
+    position: relative;
 }
 .container {
 	height: 100vh;
@@ -15,7 +16,31 @@ body,html{
     background: linear-gradient(rgba(0,0,0,0.6) , rgba(0,0,0,0.6)),url('../assets/hero1.jpg');
     background: #053140;  /* blish */
     background: #5c0b6b;  /* prplish */
+    background: #300A24;
 	background-size: cover; 
+}
+.transparent-img {
+    background-image: url("../assets/work.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 150px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    opacity: 0.4;
+}
+#exitLanding {
+    background: transparent;
+    border: 2px solid #fff;
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    color: #fff;
+    border-radius: 0px;
 }
 
 @font-face {
@@ -25,9 +50,9 @@ body,html{
     font-style: normal;
 }
 .main-name {
-	font-family: 'ailerons' !important;
-	font-size: 48px;
-	letter-spacing: 8px;
+    font-family: 'ailerons' !important;
+    font-size: 48px;
+    letter-spacing: 8px;
     padding: 50px 30px;
     color: #555;
     color: #5c0b6b;
@@ -45,7 +70,7 @@ body,html{
     font-family: monospace;
     line-height: 1.7em;
     border-right: 1px solid #000;
-    font-size: 24px;
+    font-size: 22px;
     color: #fff;
 }
 
@@ -54,6 +79,11 @@ body,html{
         padding: 20px 30px;
         font-size: 32px;
         word-spacing: 100000000px;
+    }
+    .transparent-img {
+        background-size: contain;
+        width: 170px;
+        height: 110px;
     }
     .typer {
         padding-top: 40px;
@@ -77,6 +107,7 @@ body,html{
 */
 
 /* CSS Solution Not good enough*/
+
 .typed-text>p {
     font-family: monospace;
     line-height: 1.2em;
