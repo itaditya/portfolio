@@ -68,8 +68,11 @@ function injectJS(choice) {
 				var index = this.dataset.index;
 				formD.children[index-1].children[1].style.background = '#d9d9d9';
 				formD.children[index-1].children[1].style.borderRadius = '4px';
+
+				formD.children[index-1].classList.remove("active");
 				formD.children[index].children[1].focus();
-				formD.children[index].children[0].classList.add("filled");
+				formD.children[index].classList.add("filled");
+				formD.children[index].classList.add("active");
 			}
 
 			function attachEvent() {
@@ -80,6 +83,18 @@ function injectJS(choice) {
 				document.removeEventListener('mousemove',attachEvent);
 			}
 			document.addEventListener('mousemove',attachEvent);
+
+			document.addEventListener('keydown',function(event) {
+				var evt = event || window.event;
+				// console.log(evt.keyCode);
+				if (evt.keyCode == 13) {
+					var focusedBtn = document.querySelector(".form li.active button");
+					if(focusedBtn)
+						focusedBtn.click();
+					else
+						document.querySelector(".hire-submit").click();
+				}
+			});
 
 			// Form Submission
 
@@ -92,8 +107,8 @@ function injectJS(choice) {
 			}
 
 			function hireSubmit() {
-				formSub.dataset.response = "Thank You for considering me !" ;
-				var arr = ['a','b','c','d','e'];
+				formSub.dataset.response = "Thank You for Considering Me !" ;
+				var arr = [];
 				for( i = 0 ; i < noOfbtn ; i++ ) {
 					arr[i] = formD.children[i].children[1].value;
 				}

@@ -497,6 +497,9 @@ div[role="css"] .skill-logo {
 	background-size: cover;
 	background-repeat: no-repeat;*/
 }
+.form {
+	width: 100%;
+}
 .form > ul {
 	position: relative;
 }
@@ -508,43 +511,53 @@ div[role="css"] .skill-logo {
 	text-transform: capitalize;
 }
 .form > ul:after {
-	content: "- because great ideas deserves a great team" ;
-	font-size: 16px;
-	word-spacing: 0em;
-	font-style: italic;
-	color: #5ac499;
-	position: absolute;
-	/*top: 50px;*/
-	top: 2px;
-	right: 0px;
-	/*text-transform: capitalize;*/
+    content: "- because great ideas deserves a great team";
+    font-size: 28px;
+    word-spacing: 0em;
+    font-style: italic;
+    color: #5ac499;
+    position: absolute;
+    top: 0px;
+    left: 350px;
+    text-transform: capitalize;
 }
 .form > ul > li {
 	height: 250px;
-	padding-top: 10vh;
+	padding-top: 5vh;
+	transition: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form > ul > li.active {
+	/*height: 60vh;*/
+	/*margin-bottom: calc(40vh);*/
+	margin-left: 20px;
+
 }
 .form > ul > li:first-child {
 	margin-top: 40px;
 }
 .form > ul > li > p:after {
 	content: attr(data-step);
-	font-size: 16px;
+	font-size: 4em;
 	font-weight: bold;
-	border: 2px solid #5ac499;
-	width: 60px;
-	height: 60px;
+	border-left: 1px solid #999;
+	color: #fafafa;
+	text-shadow: 6px 10px 30px rgba(0,0,0,0.2);
+	width: 200px;
+	height: 200px;
 	border-radius: 100%;
-	box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.15);
+	/*box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.15);*/
 	position: absolute;
-	right: -25%;
-	top: 4em;
+	right: 5%;
+	top: 0em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.form > ul > li > p.filled:after {
-	background: #5ac499;
-	color: #fff;
+.form > ul > li.filled > p:after {
+	color: #5ac499;
+}
+.form > ul > li.active > p:after {
+	color: #fafafa;
 }
 .form > ul > li > p {
 	font-size: 34px;
@@ -1062,7 +1075,7 @@ div[role="css"] .skill-logo {
 	#hiring-content {
 	    justify-content: center;
 	}
-	#hiring-content:before {
+	#hiring-content:before,.form > ul > li > p::after  {
 		display: none;
 	}
 	.form > ul:before {
@@ -1078,7 +1091,7 @@ div[role="css"] .skill-logo {
 	}
 	.form > ul > li {
 		height: 30vh;
-		/*margin-top: -80px;*/
+		margin-left: 0px !important;
 		padding: 0;
 	}
 
