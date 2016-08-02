@@ -631,6 +631,9 @@ div[role="css"] .skill-logo {
 .hire-submit:hover {
 	background: #2f4365;
 }
+.btn-clicked {
+	opacity: 0.4;
+}
 .hire-submit:after {
 	content: attr(data-response);
 	/*display: none;*/
