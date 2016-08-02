@@ -28,13 +28,22 @@ function showPointer(e) {
 }
 
 fbtn.addEventListener('click',toggleFooter);
-
 function injectHTML(html) {
 	elem.insertAdjacentHTML('beforeend',html);
 }
 
 function injectJS(choice) {
 	var i;
+
+
+	function addAnim(anim_name) {
+		var elem = document.querySelector(".content");
+		elem.classList.add("animated");
+		elem.classList.add(anim_name);
+		setTimeout(function(){
+			elem.classList.remove(anim_name);
+		},800);
+	}
 	switch(choice) {
 		case "details" :
 			console.log("Details Loaded");
@@ -53,16 +62,28 @@ function injectJS(choice) {
 			}
 
 			break;
+		case "projects" :
+			console.log("Projects Loaded");
+			addAnim("fadeIn");
+		 	break;
+		case "achievements" :
+			console.log("Achievements Loaded");
+			addAnim("slideInDown");
+		 	break;
 		case "hiring" :
 			/* Hiring form features =-->
 			* scrolls to next input
 			* works with button as well as return key
 			*/
+			console.log("Hiring Loaded");
 
 			var formD = document.querySelector('.form ul');
 			var formSub = document.querySelector('.hire-submit');
 			var formBtns = document.querySelectorAll('.enterBtn');
 			var noOfbtn = formBtns.length;
+
+			addAnim("pulse");
+
 
 			function formFill() {
 				var index = this.dataset.index;
@@ -108,6 +129,8 @@ function injectJS(choice) {
 
 			function hireSubmit() {
 				formSub.dataset.response = "Thank You for Considering Me !" ;
+				var toScroll = document.querySelector(".content");
+				toScroll.scrollTop = toScroll.scrollHeight;
 				var arr = [];
 				for( i = 0 ; i < noOfbtn ; i++ ) {
 					arr[i] = formD.children[i].children[1].value;
