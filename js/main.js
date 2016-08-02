@@ -128,15 +128,15 @@ function injectJS(choice) {
 			}
 
 			function hireSubmit() {
-				formSub.dataset.response = "Thank You for Considering Me !" ;
-				var toScroll = document.querySelector(".content");
-				toScroll.scrollTop = toScroll.scrollHeight;
 				var arr = [];
-				for( i = 0 ; i < noOfbtn ; i++ ) {
+				for( i = 0 ; i < noOfbtn + 1 ; i++ ) {
 					arr[i] = formD.children[i].children[1].value;
 				}
 				var jobpost = new Job(arr);
-				submitJob(JSON.stringify(jobpost))
+				var result = submitJob(JSON.stringify(jobpost))
+				formSub.dataset.response = result ;
+				var toScroll = document.querySelector(".content");
+				toScroll.scrollTop = toScroll.scrollHeight;
 			}
 
 			function submitJob(param) {
@@ -144,13 +144,14 @@ function injectJS(choice) {
 		        xmlhttp.onreadystatechange = function() {
 		            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		                var result = xmlhttp.responseText;
-		                if(result==='1')
-		                {
-		                						// Email has be
+		                if(result === '1') {
+		                	console.log('Sent !');
+		                	return "Thank You for Considering Me !";
 		                }
 		                else
 		                {
-		                						//
+		                	console.log('Not Sent !');
+		                	return "Sorry ! Your mail is not sent ..Try Later !";
 		                }
 		            }
 		        };
