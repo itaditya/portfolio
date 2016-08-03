@@ -140,7 +140,22 @@ function injectJS(choice) {
 			}
 
 			function submitJob(param) {
-				console.log(param);
+				var xmlhttp = new XMLHttpRequest();
+		        xmlhttp.onreadystatechange = function() {
+		            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		                var result = xmlhttp.responseText;
+		                if(result==='1')
+		                {
+		                						// Email has be
+		                }
+		                else
+		                {
+		                						//
+		                }
+		            }
+		        };
+		        xmlhttp.open("GET", "send_mail.php?q="+param, true);
+		        xmlhttp.send();
 			}
 
 			formSub.addEventListener('click',hireSubmit);
