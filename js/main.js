@@ -133,31 +133,33 @@ function injectJS(choice) {
 					arr[i] = formD.children[i].children[1].value;
 				}
 				var jobpost = new Job(arr);
-				var result = submitJob(JSON.stringify(jobpost))
-				formSub.dataset.response = result ;
-				var toScroll = document.querySelector(".content");
-				toScroll.scrollTop = toScroll.scrollHeight;
-			}
+				submitJob(JSON.stringify(jobpost));
 
-			function submitJob(param) {
+				function submitJob(param) {
 				var xmlhttp = new XMLHttpRequest();
 		        xmlhttp.onreadystatechange = function() {
 		            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 		                var result = xmlhttp.responseText;
-		                if(result === '1') {
+		                if(result == 1) {
 		                	console.log('Sent !');
-		                	return "Thank You for Considering Me !";
+							formSub.dataset.response = "Thank You for Considering Me !";;
 		                }
 		                else
 		                {
 		                	console.log('Not Sent !');
-		                	return "Sorry ! Your mail is not sent ..Try Later !";
+		                	formSub.dataset.response = "Sorry ! Your mail is not sent ..Try Later !";
 		                }
 		            }
 		        };
 		        xmlhttp.open("GET", "send_mail.php?q="+param, true);
 		        xmlhttp.send();
 			}
+
+				var toScroll = document.querySelector(".content");
+				toScroll.scrollTop = toScroll.scrollHeight;
+			}
+
+			
 
 			formSub.addEventListener('click',hireSubmit);
 
