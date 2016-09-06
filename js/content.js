@@ -35,11 +35,17 @@ function init() {
 		if(tabIndex != -1){
 			injectHTML(data[tab]);
 			footerbtn[tabIndex].click();
+			if(screen.width <= 400) {
+				toggleFooter();		
+			}
 		}
 		else {
 			injectHTML(data.details);
 			injectJS("details");
 			footerbtn[0].click();
+			if(screen.width <= 400) {
+				toggleFooter();		
+			}
 		}
 	});
 }
@@ -85,8 +91,7 @@ function switcher() {
 		prevElem.classList.remove('active-tab');
 		this.classList.add('active-tab');
 		if(screen.width <= 400) {
-			var fbtn = document.querySelector('.menu');
-			fbtn.click();
+			toggleFooter();		
 		}
 	}
 

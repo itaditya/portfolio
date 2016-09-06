@@ -4,16 +4,19 @@ var fbtn = document.querySelector('.menu');
 var footer = fbtn.parentNode;
 var fheight = footer.clientHeight;
 var fstate = 0;
-function toggleFooter () {
+function toggleFooter() {
 	// console.log("He");
 	if (fstate == 0) {          //the footer was small
 		footer.style.height = "70vh";  //footer expanded
+		fbtn.innerHTML = "v";
 		fstate = 1;
 	}
 	else {       //footer is expanded
 		footer.style.height = fheight + "px";  //footer smalled
-		fstate = 0;
 		footer.style.overflow = "hidden" ;
+		fbtn.innerHTML = "^";
+		fstate = 0;
+
 	}
 	// Also rotate / change the clicking icon
 	// Animate this process
@@ -30,14 +33,13 @@ function showPointer(e) {
 }
 
 fbtn.addEventListener('click',toggleFooter);
+
 function injectHTML(html) {
 	elem.insertAdjacentHTML('beforeend',html);
 }
 
 function injectJS(choice) {
 	var i;
-
-
 	function addAnim() {
 		var anim_name = "fadeIn";
 		var elem = document.querySelector(".content");
@@ -59,10 +61,11 @@ function injectJS(choice) {
 
 			var progress_bars = document.querySelectorAll(".progress-inner");
 			var progress_bar_max_width = document.querySelector(".progress-outer").clientWidth;
-
-			for (var j = 0; j < progress_bars.length; j++) {
-				progress_bars[j].style.width = parseInt(skill_progress[j])*progress_bar_max_width/100 + "px";
-			}
+			// setTimeout(function(){
+				for (var j = 0; j < progress_bars.length; j++) {
+					progress_bars[j].style.width = parseInt(skill_progress[j])*progress_bar_max_width/100 + "px";
+				}
+			// },3000);
 
 			break;
 		case "projects" :
