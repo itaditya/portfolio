@@ -1,6 +1,5 @@
 // var obj = document.getElementsByClassName('footer')[0];
 // // console.log(obj.innerHTML);
-// console.log(JSON.stringify(obj.innerHTML));
 "use strict";
 var	elem =  document.querySelector('.content');
 var	footerbtn =  document.querySelectorAll('.footer ul li');

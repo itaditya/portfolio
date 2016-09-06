@@ -1,3 +1,5 @@
+console.log(JSON.stringify(document.querySelector(".content").innerHTML));	
+
 var fbtn = document.querySelector('.menu');
 var footer = fbtn.parentNode;
 var fheight = footer.clientHeight;
@@ -36,7 +38,8 @@ function injectJS(choice) {
 	var i;
 
 
-	function addAnim(anim_name) {
+	function addAnim() {
+		var anim_name = "fadeIn";
 		var elem = document.querySelector(".content");
 		elem.classList.add("animated");
 		elem.classList.add(anim_name);
@@ -64,11 +67,11 @@ function injectJS(choice) {
 			break;
 		case "projects" :
 			console.log("Projects Loaded");
-			addAnim("fadeIn");
+			addAnim();
 		 	break;
 		case "achievements" :
 			console.log("Achievements Loaded");
-			addAnim("slideInDown");
+			addAnim();
 		 	break;
 		case "hiring" :
 			/* Hiring form features =-->
@@ -82,7 +85,7 @@ function injectJS(choice) {
 			var formBtns = document.querySelectorAll('.enterBtn');
 			var noOfbtn = formBtns.length;
 
-			addAnim("pulse");
+			addAnim();
 
 
 			function formFill() {
