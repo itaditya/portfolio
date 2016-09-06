@@ -1,4 +1,4 @@
-console.log(JSON.stringify(document.querySelector(".content").innerHTML));	
+// console.log(JSON.stringify(document.querySelector(".content").innerHTML));	
 
 var fbtn = document.querySelector('.menu');
 var footer = fbtn.parentNode;
