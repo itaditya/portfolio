@@ -147,7 +147,7 @@ li {
 	height: 58vh;
 	margin-top: 55px;
 	padding-right: 10px;
-	/*padding-left: 60px;*/
+	padding-left: 60px;
 	/*background: #fff;*/
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -1102,11 +1102,20 @@ div[role="css"] .skill-logo {
 	.thead:before {
 		margin-left: -90px;
 		padding: 15px;
-		margin-top: -30px;
+		margin-top: -20px;
 	}
 /*	.tleft:before {
 		display: none !important;
 		margin-left: 0px;
+	}*/
+	.tright::after, .tleft::after {
+		margin-top: -15px;
+		border: 9px solid transparent;
+	    border-right: 15px solid #ccc;
+	    margin-left: -27px;
+	}
+/*	.tleft::after {
+	    border-left: 9px solid transparent;
 	}*/
 
 	/* Styling for achievements page ends*/

@@ -25,16 +25,29 @@ function init() {
 	var path = 'js/JSON/HTMLcontent.json' ;
 	loadJSON( path , function(response) {
 		data = JSON.parse(response);
-		injectHTML(data.details);
-		injectJS("details");
-		footerTabSwitch(footerbtn);
+		// injectHTML(data.details);
+		// injectJS("details");
+		footerTabSwitch();
+		var tabs = ["details","skills","achievements","projects","hiring"];
+		var hashUrl = document.location.hash;
+		var tab = hashUrl.substring(hashUrl.lastIndexOf('#')+1);
+		var tabIndex = tabs.indexOf(tab);
+		if(tabIndex != -1){
+			injectHTML(data[tab]);
+			footerbtn[tabIndex].click();
+		}
+		else {
+			injectHTML(data.details);
+			injectJS("details");
+			footerbtn[0].click();
+		}
 	});
 }
 document.addEventListener("DOMContentLoaded", init);
 
-function footerTabSwitch(tabs) {
-	for(var i = 0 ; i < tabs.length ; i++) {
-		tabs[i].addEventListener('click', switcher);
+function footerTabSwitch() {
+	for(var i = 0 ; i < footerbtn.length ; i++) {
+		footerbtn[i].addEventListener('click', switcher);
 	}
 }
 
@@ -52,7 +65,7 @@ function switcher() {
 			projects : "icon-rocket" ,
 			hiring : "icon-briefcase"
 		};
-
+		document.location.hash = "#" + id;
 		var title = document.querySelector('.header .title');
 		title.innerHTML = this.innerHTML;
 		// 	title.classList.remove("active");
