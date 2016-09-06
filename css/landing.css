@@ -34,7 +34,7 @@ body,html{
 #exitLanding {
     background: transparent;
     border: 2px solid #fff;
-    width: 120px;
+    /*width: 120px;*/
     height: 40px;
     position: absolute;
     bottom: 10px;
