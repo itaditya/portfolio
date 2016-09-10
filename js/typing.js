@@ -107,6 +107,3 @@ window.onkeydown = function(key){
     },800);
   }
 };
-setTimeout(function(){
-  loadMainPage()
-},20000);
