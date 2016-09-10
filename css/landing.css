@@ -30,6 +30,9 @@ body,html{
     bottom: 10px;
     right: 20px;
     opacity: 0.4;
+    -webkit-animation: blink 2s ease-in 1s infinite alternate;
+    -o-animation: blink 2s ease-in 1s infinite alternate;
+    animation: blink 2s ease-in 1s infinite alternate;
 }
 #exitLanding {
     background: transparent;
@@ -52,9 +55,9 @@ body,html{
 .main-name {
     /*font-family: 'ailerons' !important;*/
     font-family: monospace;
-    font-size: 48px;
+    font-size: 42px;
     letter-spacing: 8px;
-    padding: 50px 30px;
+    padding: 24px 30px;
     color: #555;
     color: #5c0b6b;
     /*background: #f8f8f8;*/
@@ -70,8 +73,8 @@ body,html{
 .typer>p {
     font-family: monospace;
     line-height: 1.7em;
-    border-right: 1px solid #000;
-    font-size: 22px;
+    /*border-right: 1px solid #000;*/
+    font-size: 20px;
     color: #fff;
 }
 
@@ -90,7 +93,7 @@ body,html{
         padding-top: 40px;
     }
     .typer>p {
-        font-size: 20px;
+        font-size: 24px;
         line-height: 1.2em;
     }
 }
@@ -122,6 +125,22 @@ body,html{
     -webkit-animation: type 3.4s steps(40,end) infinite;
     -o-animation: type 3.4s steps(40,end) infinite;
     animation: type 3.4s steps(40,end) infinite;
+}
+@keyframes blink {
+    from {
+        opacity: 0.6;
+    /*        border-right: none; 
+*/    }
+}
+@-webkit-keyframes blink {
+    from {
+        opacity: 0.6;
+    */    }
+}
+@-o-keyframes blink {
+    from {
+        opacity: 0.6;
+    */    }
 }
 @keyframes type {
     from {
