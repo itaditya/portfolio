@@ -45,12 +45,13 @@ body,html{
 
 @font-face {
     font-family: 'ailerons';
-    src: url('fonts/ailerons/ailerons.ttf') format('truetype'),
+    font-src: url('fonts/ailerons/ailerons.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 .main-name {
-    font-family: 'ailerons' !important;
+    /*font-family: 'ailerons' !important;*/
+    font-family: monospace;
     font-size: 48px;
     letter-spacing: 8px;
     padding: 50px 30px;

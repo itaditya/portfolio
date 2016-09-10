@@ -1,7 +1,6 @@
 //20
-
-
-setTimeout(function() {
-  var lastline = document.querySelector('.lastLineExit');
-  lastline.style.display = "inline-block";
-},21500);
+function loadMainPage(){
+    document.querySelector(".page").classList.add("animated");
+    document.querySelector(".page").classList.add("fadeOut");
+    document.location.pathname = "";
+}

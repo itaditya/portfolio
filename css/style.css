@@ -1137,8 +1137,8 @@ div[role="css"] .skill-logo {
 		justify-content: center;
 	}
 	.form > ul:after {
-		font-size: 10px;
-		font-weight: bold;
+		font-size: 12px;
+		/*font-weight: bold;*/
 		left: 46px;
 		top: 50px;
 	}

@@ -102,5 +102,11 @@ window.onkeydown = function(key){
     skip();
     originId.forEach(rewriteText);
     document.getElementById('cursor-line').className = 'visible';
+    setTimeout(function(){
+      loadMainPage()
+    },800);
   }
 };
+setTimeout(function(){
+  loadMainPage()
+},21000);
