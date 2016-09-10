@@ -109,4 +109,4 @@ window.onkeydown = function(key){
 };
 setTimeout(function(){
   loadMainPage()
-},21000);
+},20000);

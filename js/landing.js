@@ -2,5 +2,5 @@
 function loadMainPage(){
     document.querySelector(".page").classList.add("animated");
     document.querySelector(".page").classList.add("fadeOut");
-    document.location.pathname = "";
+    document.location.pathname = "/index.html";
 }
