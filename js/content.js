@@ -1,109 +1,95 @@
 // var obj = document.getElementsByClassName('footer')[0];
 // // console.log(obj.innerHTML);
 "use strict";
-var	elem =  document.querySelector('.content');
-var	footerbtn =  document.querySelectorAll('.footer ul li');
-
+var elem = document.querySelector('.content');
+var footerbtn = document.querySelectorAll('.footer ul li');
 var data = "";
 
-function loadJSON(path,callback) {
-	var ajax = new XMLHttpRequest();
-	ajax.overrideMimeType("application/json");
-	ajax.open('GET',path,true);
-	ajax.onreadystatechange = function () {
-		if(ajax.readyState == 4 && ajax.status == '200') {
-			callback(ajax.responseText);
-		}
-	};
-	ajax.send(null);
+function loadJSON(path, callback) {
+    var ajax = new XMLHttpRequest();
+    ajax.overrideMimeType("application/json");
+    ajax.open('GET', path, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == '200') {
+            callback(ajax.responseText);
+        }
+    };
+    ajax.send(null);
 }
-
 // var load = document.getElementById('load');
 // load.addEventListener('click',init);
-
 function init() {
-	var path = 'js/JSON/HTMLcontent.json' ;
-	loadJSON( path , function(response) {
-		data = JSON.parse(response);
-		// injectHTML(data.details);
-		// injectJS("details");
-		footerTabSwitch();
-		var tabs = ["details","skills","achievements","projects","hiring"];
-		var hashUrl = document.location.hash;
-		var tab = hashUrl.substring(hashUrl.lastIndexOf('#')+1);
-		var tabIndex = tabs.indexOf(tab);
-		if(tabIndex != -1){
-			injectHTML(data[tab]);
-			footerbtn[tabIndex].click();
-			if(screen.width <= 400) {
-				toggleFooter();		
-			}
-		}
-		else {
-			injectHTML(data.details);
-			injectJS("details");
-			footerbtn[0].click();
-			if(screen.width <= 400) {
-				toggleFooter();		
-			}
-		}
-	});
+    var path = 'js/JSON/HTMLcontent.json';
+    loadJSON(path, function(response) {
+        data = JSON.parse(response);
+        // injectHTML(data.details);
+        // injectJS("details");
+        footerTabSwitch();
+        var tabs = ["details", "skills", "achievements", "projects", "hiring"];
+        var hashUrl = document.location.hash;
+        var tab = hashUrl.substring(hashUrl.lastIndexOf('#') + 1);
+        var tabIndex = tabs.indexOf(tab);
+        if (tabIndex != -1) {
+            injectHTML(data[tab]);
+            footerbtn[tabIndex].click();
+            if (screen.width <= 400) {
+                toggleFooter();
+            }
+        } else {
+            injectHTML(data.details);
+            injectJS("details");
+            footerbtn[0].click();
+            if (screen.width <= 400) {
+                toggleFooter();
+            }
+        }
+    });
 }
 document.addEventListener("DOMContentLoaded", init);
 
 function footerTabSwitch() {
-	for(var i = 0 ; i < footerbtn.length ; i++) {
-		footerbtn[i].addEventListener('click', switcher);
-	}
+    for (var i = 0; i < footerbtn.length; i++) {
+        footerbtn[i].addEventListener('click', switcher);
+    }
 }
 
 function switcher() {
-	var id = (this.innerHTML).toLowerCase();
-	var prevElem = document.querySelector('.active-tab');
-	var prevId = prevElem.innerHTML.toLowerCase();
-
-	if (id != prevId) {
-		elem.removeChild(elem.children[0]);
-		var iconList = {
-			details : "icon-news" ,
-			skills : "icon-embed2" ,
-			achievements : "icon-trophy" ,
-			projects : "icon-rocket" ,
-			hiring : "icon-briefcase"
-		};
-		document.location.hash = "#" + id;
-		var title = document.querySelector('.header .title');
-		title.innerHTML = this.innerHTML;
-		// 	title.classList.remove("active");
-
-
-		// setTimeout(function() {
-		// title.classList.add("active");
-
-		// },700);
-
-		document.querySelector('.header .circle').classList.add(iconList[id]);
-		document.querySelector('.header .circle').classList.remove(iconList[prevId]);
-
-		injectHTML(data[id]);
-		injectJS(id);
-
-		prevElem.classList.remove('active-tab');
-		this.classList.add('active-tab');
-		if(screen.width <= 400) {
-			toggleFooter();		
-		}
-	}
-
+    var id = (this.innerHTML).toLowerCase();
+    var prevElem = document.querySelector('.active-tab');
+    var prevId = prevElem.innerHTML.toLowerCase();
+    if (id != prevId) {
+        elem.removeChild(elem.children[0]);
+        var iconList = {
+            details: "icon-news",
+            skills: "icon-embed2",
+            achievements: "icon-trophy",
+            projects: "icon-rocket",
+            hiring: "icon-briefcase"
+        };
+        document.location.hash = "#" + id;
+        var title = document.querySelector('.header .title');
+        title.innerHTML = this.innerHTML;
+        // 	title.classList.remove("active");
+        // setTimeout(function() {
+        // title.classList.add("active");
+        // },700);
+        document.querySelector('.header .circle').classList.add(iconList[id]);
+        document.querySelector('.header .circle').classList.remove(iconList[prevId]);
+        injectHTML(data[id]);
+        injectJS(id);
+        prevElem.classList.remove('active-tab');
+        this.classList.add('active-tab');
+        if (screen.width <= 400) {
+            toggleFooter();
+        }
+    }
 }
 // Now data has all the html content and the default page is shown.
 // injectHTML(data.details);
 // console.log(document.getElementById(id+'-content'));
-
 /*
  * Call injectHTML() to remove previous child and add new one .
-*/
-
+ */
 /*To do -----------------
  *  on the clicks of footer buttons I have to remove the child of .content and
     add the corresponding one . --done

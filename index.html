@@ -1,43 +1,71 @@
 <!Doctype html>
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-	<title>Aditya Agarwal</title>
-</head>
-<body>
-	<div class="page animated fadeIn">
-		<div class="pointer"></div>
-		<div class="container">
-			<div class="header">
-				<div class="circle bg-green txt-white icon-news"></div>
-				<div class="title">Details</div>
-				<div class="btn-container align-right">
-					<a href="https://docs.google.com/document/d/1cfV1T7_WnY1LKWfdIgo34CDpU7_ne97mUfqqDdvixc8/pub" class="btn align-right icon-download" target="blank"></a>
-					<div class="btn align-right icon-home sm-hide"></div>
-				</div>
-			</div>
-			<div class="content sm-full">
-				<!-- <div class="flexbox sm-full" id="change-content">
-				</div> -->
-			</div>
-			<div class="footer" onresize="toggleFooter();">
-				<div class="menu lg-hide sm-blockbox">^</div>
-				<ul class="tabs flexbox sm-blockbox">
-					<li class="active-tab" role="Details">Details</li>
-					<li role="Skills">Skills</li>
-					<li role="Achievements">Achievements</li>
-					<li role="Projects">Projects</li>
-					<li role="Hiring">Hiring</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- Page ends -->
-	<script type="text/javascript" src="js/content.js"></script>
-	 <script type="text/javascript" src="js/main.js"></script>
-
-</body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/carousel.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <title>
+            Aditya Agarwal
+        </title>
+    </head>
+    <body>
+        <div class="page animated fadeIn">
+            <div class="pointer"></div>
+            <div class="container blur">
+                <div class="header">
+                    <div class="circle bg-green txt-white icon-news"></div>
+                    <div class="title">
+                        Details
+                    </div>
+                    <div class="btn-container align-right">
+                        <!-- <a href="#details" class="btn align-right icon-home sm-hide" target="blank"></a> -->
+                        <!-- <div class="btn align-right icon-home sm-hide"></div> -->
+                        <a href="#" class="btn align-right icon-facebook"></a>
+                        <a href="#" class="btn align-right icon-github"></a>
+                        <a href="#" class="btn align-right icon-codepen"></a>
+                        <a href="https://docs.google.com/document/d/1cfV1T7_WnY1LKWfdIgo34CDpU7_ne97mUfqqDdvixc8/pub" class="btn align-right icon-download" target="blank"></a>
+                    </div>
+                </div>
+                <div class="content sm-full">
+                    <!-- <div class="flexbox sm-full" id="change-content">
+                                    </div> -->
+                </div>
+                <div class="footer" onresize="toggleFooter();">
+                    <div class="menu lg-hide sm-blockbox">
+                        ^
+                    </div>
+                    <ul class="tabs flexbox sm-blockbox">
+                        <li class="active-tab" role="Details">
+                            <span class="icon-news"></span>
+                            Details
+                        </li>
+                        <li role="Skills">
+                            <span class="icon-embed2"></span>
+                            Skills
+                        </li>
+                        <li role="Achievements">
+                            <span class="icon-trophy"></span>
+                            Achievements
+                        </li>
+                        <li role="Projects">
+                            <span class="icon-rocket"></span>
+                            Projects
+                        </li>
+                        <!-- <li role="Hiring">
+                            Hiring
+                        </li> -->
+                        <li role="Contact">
+                            <span class="icon-coffee"></span>
+                            Contact
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Page ends -->
+        <!-- <script type="text/javascript" src="js/content.js"></script> -->
+        <script src="/js/carousel.js"></script>
+        <script type="text/javascript" src="js/contentLoad.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
 </html>
-
