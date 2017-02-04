@@ -81,14 +81,6 @@ var skip = function() {
   };
 };
 
-// rewrite text with value stored on page load
-
-// var rewriteText = function(index) {
-//   var loc = document.getElementById(originId[index]);
-//   loc.innerHTML = '&gt;&gt; ' + originText[index];
-//   loc.className = 'visible';
-// };
-
 var rewriteText = function(element, index, array) {
   var loc = document.getElementById(element);
   loc.innerHTML = '&gt;&gt; ' + originText[index];

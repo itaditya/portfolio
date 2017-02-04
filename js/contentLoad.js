@@ -4,7 +4,6 @@ var footerbtn = document.querySelectorAll('.footer ul li');
 
 function loadHTML(file, callback) {
     var content;
-    // var content = sessionStorage.getItem(file);
     if (content) {
         callback(content);
     } else {
@@ -53,27 +52,25 @@ function footerTabSwitch() {
 
 function switcher() {
     var id = this.getAttribute("role").toLowerCase();
+    console.log(id);
     // var id = (this.innerHTML).toLowerCase().trim();
     var prevElem = document.querySelector('.active-tab');
-    var prevId = prevElem.innerHTML.toLowerCase().trim();
+    var prevId = prevElem.getAttribute("role").toLowerCase().trim();
+    console.log(prevId);
     if (id != prevId) {
         elem.removeChild(elem.children[0]);
         var iconList = {
-            details: "icon-news",
-            skills: "icon-embed2",
+            details: "icon-newspaper",
+            skills: "icon-embed",
             achievements: "icon-trophy",
             projects: "icon-rocket",
             hiring: "icon-briefcase",
-            contact: "icon-coffee"
+            contact: "icon-mug"
         };
         document.querySelector(".container").classList.add("blur");
         document.location.hash = "#" + id;
         var title = document.querySelector('.header .title');
         title.innerHTML = this.getAttribute("role");
-        //  title.classList.remove("active");
-        // setTimeout(function() {
-        // title.classList.add("active");
-        // },700);
         document.querySelector('.header .circle').classList.add(iconList[id]);
         document.querySelector('.header .circle').classList.remove(iconList[prevId]);
         loadHTML(id, function(response) {
