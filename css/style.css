@@ -246,7 +246,8 @@ li {
 }
 
 .recom {
-    width: 83%;
+    /*width: 83%;*/
+    width: 90%;
 }
 
 .recom strong {
@@ -287,19 +288,14 @@ li {
 .skill-box {
     /*background: #000;*/
     /*margin: 30px;*/
-    height: 200px;
     float: left;
     width: 50%;
-    padding: 30px 40px;
-}
-
-.skill-box div {
-    height: 100%;
-}
+    padding: 15px 40px;
+} 
 
 .skill-logo {
     width: 30%;
-    height: auto;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -313,11 +309,11 @@ div[role="python"] .skill-logo {
 }
 
 div[role="html"] .skill-logo {
-    background-image: url("../assets/h.png");
+    background-image: url("../assets/hc.png");
 }
 
-div[role="css"] .skill-logo {
-    background-image: url("../assets/c.png");
+div[role="mongo"] .skill-logo {
+    background-image: url("../assets/mongo.png");
 }
 
 .skill-text {
@@ -338,7 +334,7 @@ div[role="css"] .skill-logo {
 
 .tag-box {
     margin-top: 20px;
-    height: 80px !important;
+    min-height: 80px !important;
     /*padding: 0 22px;*/
 }
 
@@ -362,7 +358,10 @@ div[role="css"] .skill-logo {
     text-transform: capitalize;
     margin-right: 10px;
 }
-
+.tags.main{
+    background: #ddd;
+    /*color:#fff;*/
+}
 .progress-outer {
     height: 4px !important;
     width: 300px;
@@ -431,7 +430,7 @@ div[role="css"] .skill-logo {
     padding: 0;
 }
 
-.timeline>ul>li {
+.timeline>ul>li{
     /*position: relative;*/
     /*margin-bottom: 100px;*/
     /*border-bottom: 2px solid #000;*/
@@ -615,210 +614,109 @@ div[role="css"] .skill-logo {
 
 #hiring-content {
     justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
     /*  background: url("../assets/cf.jpg");
     background-size: cover;
     background-repeat: no-repeat;*/
 }
 
 .form {
-    width: 100%;
+    width: 80%;
+    text-align:center;
 }
-
-.form>ul {
-    position: relative;
-    padding: 0;
-    margin-bottom: 60px;
-}
-
-.form>ul:before {
-    content: "Let's Say Hi !";
-    font-size: 28px;
+.greet-msg{
+    font-size: 24px;
     /*font-style: italic;*/
     color: #666;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
+}
+.greet-msg strong{
+    /*color: #ed8f8f;*/
+    color: #5ac499;
+}
+.form>ul:before {
+    content: "Let's Say Hi !";
+    
 }
 
 .form>ul:after {
-    /*content: "- adityaa803@gmail.com";*/
     content: "- coz I love talking to LIKE MINDED heads";
     font-size: 28px;
     word-spacing: 0em;
     font-style: italic;
     color: #5ac499;
-    position: absolute;
-    top: 0px;
-    left: 350px;
-    /*text-transform: capitalize;*/
 }
 
-.form>ul>li {
-    height: 200px;
+.form>.form-box {
     padding-top: 5vh;
     transition: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
 }
 
-.form>ul>li.active {
-    /*height: 60vh;*/
-    /*margin-bottom: calc(40vh);*/
-    /*margin-left: 20px;*/
-}
-
-.form>ul>li:first-child {
-    margin-top: 20px;
-}
-
-.form>ul>li>p:after {
-    content: "\e9e1";
-    font-family: "portfolio";
-    font-size: 4em;
-    color: #5ac499;
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    position: absolute;
-    right: 5%;
-    top: 0em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 1.6s;
-}
-
-.form>ul>li.valid>p:after {
-    content: "\e9df";
-}
-
-.form>ul>li.filled:not(.valid)>p:after {
-    content: "\e9fb" !important;
-}
-
-.form>ul>li.active>p:after {
-    /*content: "\e925";*/
-}
-
-.form>ul>li>p {
-    font-size: 34px;
-    color: #5ac499;
-    letter-spacing: 1px;
-    position: relative;
-    line-height: 1em;
-}
-
-.form>ul>li>input {
+.form>.form-box>.input {
     border: none;
-    width: 600px;
-    font-size: 26px;
-    padding: 30px 0 30px 20px;
+    font-size: 20px;
+    padding: 20px 0 20px 20px;
     border-bottom: 3px solid #ddd;
     transition: .7s;
     color: #888;
-    background: transparent;
+    background: #d9d9d9;
+    border-radius: 4px;
+    width: 100%;
 }
 
-.form>ul>li>input:focus {
+.form>.form-box.form-inline{
+    display: flex;
+    justify-content: space-between;
+}
+.form>.form-box.form-inline>.input{
+    width: 47%;
+}
+
+.form>.form-box>.input:focus {
     background: transparent !important;
     border-bottom: 3px solid #5ac499;
 }
-
-.form>ul>li.filled>input {
-    background: #d9d9d9;
-    border-radius: 4px;
-}
-
-.form>ul>li.filled>input:invalid {
+.form>.form-box>.input.touched:invalid {
     background: transparent;
     border-bottom: 3px solid #ed8f8f;
 }
 
-.form>ul>li.filled:not(.valid)>p {
-    color: #ed8f8f;
-}
-
 #hiring-content .btn {
-    width: 110px;
-    height: 45px;
-    margin-left: -140px;
-    border: none;
-    background: #5ac499;
-    border-radius: 3px;
-    transition: .4s;
 }
 
-.editBtn {
-    display: none;
-}
-
-.form>ul>li.filled .editBtn {
-    display: initial;
-}
-
-.form>ul>li.filled:not(.valid) .editBtn {
-    background: #ed8f8f !important;
-}
-
-.form>ul>li.filled .enterBtn {
-    display: none;
-}
-
-.enterBtn:hover, .hire-submit:hover {
+.contact-submit:hover {
     box-shadow: 2px 5px 20px 2px rgba(0, 0, 0, 0.2);
 }
 
-#hiring-content .btn:before {
-    color: rgba(0, 0, 0, 0.2);
-    font-weight: normal;
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-.enterBtn:before {
-    content: "Enter";
-}
-
-.editBtn:before {
-    content: "Edit";
-}
-
-#hiring-content .btn>span {
-    color: #51a282;
-    /*margin-right: -20px;*/
-    color: rgba(0, 0, 0, 0.2);
-}
-
-#hiring-content .btn:hover>span {
-    /*color: #666261;*/
-    color: rgba(0, 0, 0, 0.3);
-    /*margin-right: -20px;*/
-}
-
-.hire-submit {
+.contact-submit {
     width: 160px;
     height: 70px;
     height: 50px;
-    background: #4D5275;
     /*margin-left: 60px;*/
     color: #fff;
-    font-size: 30px;
+    /*font-size: 30px;*/
+    font-size: 20px;
     /*position: relative;*/
     transition: .4s;
     border: none;
     border-radius: 3px;
-    /*top: -80px;*/
+    /*margin-left: -140px;*/
+    background: #5ac499;
 }
-
-.contact-submit {
-    font-size: 20px;
+.contact-submit.form-error{
+    background: #ed8f8f;
 }
-
-.hire-submit:hover {
-    background: #2f4365;
+.contact-submit.form-success{
+    background: #4D5275;
 }
 
 .btn-clicked {
     opacity: 0.4;
 }
 
-.hire-submit:after {
+.contact-submit:after {
     content: attr(data-response);
     /*display: none;*/
     font-size: 24px;
@@ -1191,7 +1089,7 @@ div[role="css"] .skill-logo {
     #hiring-content {
         justify-content: center;
     }
-    #hiring-content:before, .form>ul>li>p::after {
+    #hiring-content:before, .form>.form-box>p::after {
         display: none;
     }
     .form>ul:before {
@@ -1205,12 +1103,12 @@ div[role="css"] .skill-logo {
         left: 46px;
         top: 50px;
     }
-    .form>ul>li {
+    .form>.form-box {
         height: 30vh;
         margin-left: 0px !important;
         padding: 0;
     }
-    .form>ul>li:first-child {
+    .form>.form-box:first-child {
         padding-top: 20px;
         /*margin-top: 40px;*/
     }
@@ -1219,23 +1117,23 @@ div[role="css"] .skill-logo {
         margin-left: 0;
         display: none;
     }
-    .form>ul>li>textarea {
+    .form>.form-box>textarea {
         /*min-height: 150px;*/
     }
-    .form>ul>li>p {
+    .form>.form-box>p {
         font-size: 22px;
     }
-    .form>ul>li>input, .form>ul>li>textarea {
+    .form>.form-box>.input, .form>.form-box>textarea {
         border-bottom: 2px solid #ddd;
         font-size: 18px;
         width: 260px;
     }
-    .hire-submit {
+    .contact-submit {
         width: 120px;
         height: 50px;
         font-size: 20px;
     }
-    .hire-submit:after {
+    .contact-submit:after {
         font-size: 18px;
         top: 80px;
         left: 0;

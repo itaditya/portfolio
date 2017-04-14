@@ -1,45 +1,14 @@
 <div class="flexbox sm-full" id="hiring-content">
+    <p class="greet-msg">Have a cool project you're working on ? <strong>That's my JAM.</strong></p>
     <div class="form">
-        <ul role="contact">
-            <li>
-                <p>
-                    Name
-                </p>
-                <input type="text" minlength="3" required />
-                <button class="btn enterBtn" tabindex="-1">
-                    <span class="icon-circle-right"></span>
-                </button>
-                <button class="btn editBtn" tabindex="-1">
-                    <span class="icon-pencil"></span>
-                </button>
-            </li>
-            <li>
-                <p>
-                    Email
-                </p>
-                <input type="email" required/>
-                <button class="btn enterBtn" tabindex="-1">
-                    <span class="icon-circle-right"></span>
-                </button>
-                <button class="btn editBtn" tabindex="-1">
-                    <span class="icon-pencil"></span>
-                </button>
-            </li>
-            <li>
-                <p>
-                    Message
-                </p>
-                <input type="text" minlength="5" required/>
-                <button class="btn enterBtn" tabindex="-1">
-                    <span class="icon-circle-right"></span>
-                </button>
-                <button class="btn editBtn" tabindex="-1">
-                    <span class="icon-pencil"></span>
-                </button>
-            </li>
-        </ul>
-        <button class="hire-submit contact-submit" data-response=" ">
-            Contact Me
-        </button>
+        <div class="form-box form-inline">
+            <input class="input" type="text" required placeholder="Name"/>
+            <input class="input" type="email" required placeholder="Email"/>
+        </div>
+        <div class="form-box">
+            <textarea class="input" type="text" minlength="5" required placeholder="Message" rows="3"></textarea>
+        </div>
+        <br/>
+        <button class="contact-submit" data-response=" ">Hit Me Up !</button>
     </div>
 </div>

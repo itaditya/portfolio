@@ -89,74 +89,40 @@ function injectJS(choice) {
         // case "hiring" :
     case "contact":
         console.log("Contact Loaded");
-        var formD = document.querySelector('.form ul');
+        var formInp = document.querySelectorAll('.form .input');
         var formSub = document.querySelector('.contact-submit');
-        var formBtns = document.querySelectorAll('.enterBtn');
-        var formInps = document.querySelectorAll('.form input');
-        var editBtns = document.querySelectorAll('.editBtn');
-        var noOfbtn = formBtns.length;
         addAnim();
-        formD.children[0].classList.add("active");
-        formD.children[0].children[1].focus();
-
-        function editInput() {
-            var index = this.dataset.index;
-            formD.children[index - 1].children[1].focus();
-        }
-
-        function inputFocus() {
-            var parent = this.parentNode;
-            parent.classList.remove("filled");
-            parent.classList.add("active");
-        }
-
-        function inputBlur() {
-            var parent = this.parentNode;
-            if (this.value.length > 0) {
-                parent.classList.add("filled");
-                parent.classList.remove("active");
-            }
-            var input = parent.querySelector("input:valid");
-            if(input){
-                parent.classList.add("valid");
-            }else{
-                parent.classList.remove("valid");
-            }
-        }
-
-        function attachEvent() {
-            for (i = 0; i < noOfbtn; i++) {
-                var x = formD.children[i].children[0].dataset.step = i + 1;
-                formBtns[i].dataset.index = i + 1;
-                editBtns[i].dataset.index = i + 1;
-                formInps[i].addEventListener('blur', inputBlur);
-                formInps[i].addEventListener('focus', inputFocus);
-                editBtns[i].addEventListener('click', editInput);
-            }
-        }
-        attachEvent();
         document.addEventListener('keydown', function (event) {
             var evt = event || window.event;
             if (evt.keyCode == 13) {
-                var filled = document.querySelectorAll(".form li.filled");
-                if (filled.length === 3) {
-                    formSub.click();
-                }
+                formSub.click();
             }
         });
 
+        function inputFocus(event) {
+            this.classList.add("touched");
+        }
+        for (var i = formInp.length - 1; i >= 0; i--) {
+            formInp[i].addEventListener('focus', inputFocus)
+        }
+
         function hireSubmit() {
-            formSub.classList.add("btn-clicked");
+            var filled = document.querySelectorAll(".form .input:valid");
+            setTimeout(function () {
+                formSub.classList.remove("form-success");
+                formSub.classList.remove("form-error");
+            }, 800);
+            if (filled.length != 3) {
+                formSub.classList.add("form-error")
+                return
+            }
+            formSub.classList.add("form-success");
             var jobpost = {
-                name: formD.children[0].children[1].value,
-                email: formD.children[1].children[1].value,
-                message: formD.children[2].children[1].value
+                name: formInp[0].value,
+                email: formInp[1].value,
+                message: formInp[2].value
             }
             console.log(jobpost);
-            // submitJob(JSON.stringify(jobpost));
-            setTimeout(function () {
-                formSub.classList.remove("btn-clicked");
-            }, 800);
         }
         formSub.addEventListener('click', hireSubmit);
         break;
