@@ -125,6 +125,7 @@ li {
     letter-spacing: 0.06em;
     margin-left: 30px;
     transition: .7s;
+    color: #5ac499;
 }
 
 .header>.active {
@@ -291,7 +292,7 @@ li {
     float: left;
     width: 50%;
     padding: 15px 40px;
-} 
+}
 
 .skill-logo {
     width: 30%;
@@ -358,10 +359,12 @@ div[role="mongo"] .skill-logo {
     text-transform: capitalize;
     margin-right: 10px;
 }
-.tags.main{
+
+.tags.main {
     background: #ddd;
     /*color:#fff;*/
 }
+
 .progress-outer {
     height: 4px !important;
     width: 300px;
@@ -424,13 +427,151 @@ div[role="mongo"] .skill-logo {
 /* Styling for skills page ends */
 
 
+/* Styling for projects page */
+
+#projects-content {
+    height: 100%;
+}
+
+.main-carousel {
+    height: 100%;
+}
+
+.carousel-cell {
+    width: 100%;
+    height: 100%;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.flickity-page-dots {
+    bottom: 10px;
+}
+
+.flickity-page-dots .dot {
+    height: 4px;
+    width: 40px;
+    margin: 0;
+    border-radius: 0;
+    /*background: #fff;*/
+}
+
+.flickity-page-dots .dot.is-selected {
+    /*background: #5ac499;*/
+}
+
+.flickity-prev-next-button {
+    transition: 0.6s;
+    background: transparent;
+}
+
+.flickity-prev-next-button:hover {
+    background: #5ac499;
+    color: #fff;
+}
+
+
+/* arrow color */
+
+.flickity-prev-next-button .arrow {
+    fill: #5ac499;
+}
+
+.flickity-prev-next-button:hover.no-svg {
+    color: #fff;
+}
+
+.flickity-prev-next-button:hover .arrow {
+    fill: #fff;
+}
+
+.flickity-prev-next-button.no-svg {
+    color: #5ac499;
+}
+
+.carousel-cell-container {
+    height: 100%;
+}
+
+.carousel-cell-image {
+    display: block;
+    max-height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    width: 55%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+
+/* fade in lazy loaded image */
+
+.carousel-cell-image.flickity-lazyloaded, .carousel-cell-image.flickity-lazyerror {
+    opacity: 1;
+}
+
+.carousel-cell-content {
+    padding: 10px 50px;
+    width: 40%;
+    height: 100%;
+    font-weight: normal;
+    overflow-y: auto;
+}
+
+.carousel-content-title {
+    margin: 35px 0;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    /*box-shadow: 4px 2px 12px 0px rgba(0, 0, 0, 0.4);*/
+}
+
+.carousel-content-description {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 0;
+    color: #999;
+    opacity: 0;
+    transition: 1.5s;
+    padding-bottom: 10px;
+}
+
+.carousel-cell.is-selected .carousel-content-description{
+    opacity: 1;
+}
+
+.carousel-content-links {
+    width: 60%;
+}
+
+.carousel-content-links .link {
+    display: inline-block;
+    background: #5ac499;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.carousel-content-links .link:hover {
+    box-shadow: 3px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Styling for projects page ends */
+
+
 /* Styling for acheivements page */
 
 .timeline>ul {
     padding: 0;
 }
 
-.timeline>ul>li{
+.timeline>ul>li {
     /*position: relative;*/
     /*margin-bottom: 100px;*/
     /*border-bottom: 2px solid #000;*/
@@ -623,21 +764,23 @@ div[role="mongo"] .skill-logo {
 
 .form {
     width: 80%;
-    text-align:center;
+    text-align: center;
 }
-.greet-msg{
+
+.greet-msg {
     font-size: 24px;
     /*font-style: italic;*/
     color: #666;
     /*text-transform: capitalize;*/
 }
-.greet-msg strong{
+
+.greet-msg strong {
     /*color: #ed8f8f;*/
     color: #5ac499;
 }
+
 .form>ul:before {
     content: "Let's Say Hi !";
-    
 }
 
 .form>ul:after {
@@ -666,11 +809,12 @@ div[role="mongo"] .skill-logo {
     width: 100%;
 }
 
-.form>.form-box.form-inline{
+.form>.form-box.form-inline {
     display: flex;
     justify-content: space-between;
 }
-.form>.form-box.form-inline>.input{
+
+.form>.form-box.form-inline>.input {
     width: 47%;
 }
 
@@ -678,13 +822,13 @@ div[role="mongo"] .skill-logo {
     background: transparent !important;
     border-bottom: 3px solid #5ac499;
 }
+
 .form>.form-box>.input.touched:invalid {
     background: transparent;
     border-bottom: 3px solid #ed8f8f;
 }
 
-#hiring-content .btn {
-}
+#hiring-content .btn {}
 
 .contact-submit:hover {
     box-shadow: 2px 5px 20px 2px rgba(0, 0, 0, 0.2);
@@ -705,10 +849,12 @@ div[role="mongo"] .skill-logo {
     /*margin-left: -140px;*/
     background: #5ac499;
 }
-.contact-submit.form-error{
+
+.contact-submit.form-error {
     background: #ed8f8f;
 }
-.contact-submit.form-success{
+
+.contact-submit.form-success {
     background: #4D5275;
 }
 

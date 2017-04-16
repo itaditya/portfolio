@@ -65,18 +65,13 @@ function injectJS(choice) {
     case "projects":
         console.log("Projects Loaded");
         addAnim();
-        /*        var a = new SCarousel({
-                    element: ".carousel-1",
-                    animation: "elastic",
-                    automove: true,
-                    interval: 5000,
-                    // width: "800px",
-                    // width: "100%",
-                    height: "58vh"
-                });*/
-        window.addEventListener("resize", function () {
-            console.log("test");
-        })
+        var flkty = new Flickity('.main-carousel', {
+            cellAlign: 'left',
+            wrapAround: true,
+            setGallerySize: false,
+            imagesLoaded: true,
+            lazyLoad:true
+        });
         break;
     case "achievements":
         console.log("Achievements Loaded");
