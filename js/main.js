@@ -72,6 +72,7 @@ function injectJS(choice) {
             imagesLoaded: true,
             lazyLoad:true
         });
+        document.querySelector(".main-carousel").focus();
         break;
     case "achievements":
         console.log("Achievements Loaded");
