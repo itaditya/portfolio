@@ -78,7 +78,7 @@ li {
     transition: 0.6s;
 }
 
-.container.blur {
+.blur {
     filter: blur(5px);
 }
 
@@ -150,9 +150,10 @@ li {
 /* Styling for details page */
 
 .profile-pic {
-    height: 220px !important;
-    width: 230px !important;
+    /*height: 220px !important;*/
+    width: 220px !important;
     margin-left: 50px;
+    border-radius: 50%;
     /*background: #000;*/
 }
 
@@ -356,7 +357,7 @@ div[role="mongo"] .skill-logo {
     white-space: nowrap;
     /* used to not break words into differnt lines*/
     /*word-spacing: 5px;*/
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     margin-right: 10px;
 }
 
@@ -523,7 +524,7 @@ div[role="mongo"] .skill-logo {
 }
 
 .carousel-content-title {
-    margin: 35px 0;
+    margin: 0 0 35px;
     padding: 10px 20px;
     color: #fff;
     border-radius: 4px;
@@ -584,7 +585,8 @@ div[role="mongo"] .skill-logo {
     position: relative;
 }
 
-.first-line:before {
+/*.first-line */
+.timeline ul>li:first-child .vertical-line:before {
     content: "Today";
     font-size: 30px;
     color: #fff;
@@ -1183,7 +1185,7 @@ div[role="mongo"] .skill-logo {
     }
     /* Styling for skills page ends*/
     /* Styling for achievements page*/
-    .first-line:before {
+    .timeline ul>li:first-child .vertical-line:before {
         display: none;
     }
     .vertical-line {

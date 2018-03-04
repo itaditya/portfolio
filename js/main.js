@@ -36,6 +36,7 @@ function injectJS(choice) {
     var i;
 
     function addAnim() {
+        // return;
         var anim_name = "fadeIn";
         var elem = document.querySelector(".content");
         elem.classList.add("animated");

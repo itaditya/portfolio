@@ -3,23 +3,31 @@ var elem = document.querySelector('.content');
 var footerbtn = document.querySelectorAll('.footer ul li');
 
 function loadHTML(file, callback) {
-    var content;
-    if (content) {
-        callback(content);
-    } else {
-        var path = 'partials/HTML/' + file + '.html';
-        var ajax = new XMLHttpRequest();
-        ajax.overrideMimeType("application/html");
-        ajax.open('GET', path, true);
-        ajax.onreadystatechange = function() {
-            if (ajax.readyState == 4 && ajax.status == '200') {
-                sessionStorage.setItem(file, ajax.responseText);
-                callback(ajax.responseText);
-            }
-        };
-        ajax.send(null);
+    var path = 'partials/HTML/' + file + '.html';
+    var ajax = new XMLHttpRequest();
+    ajax.overrideMimeType("application/html");
+    ajax.open('GET', path, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == 4 && ajax.status == '200') {
+            callback(ajax.responseText);
+        }
+    };
+    ajax.send(null);
+}
+
+function classToggler(el, className) {
+    var toggled = false;
+    return function () {
+        return;
+        toggled = !toggled;
+        if(toggled) {
+           el.classList.add(className);
+        } else {
+           el.classList.remove(className);
+        }
     }
 }
+
 
 function init() {
     footerTabSwitch();
@@ -67,16 +75,15 @@ function switcher() {
             hiring: "icon-briefcase",
             contact: "icon-mug"
         };
-        document.querySelector(".container").classList.add("blur");
         document.location.hash = "#" + id;
         var title = document.querySelector('.header .title');
         title.innerHTML = this.getAttribute("role");
-        document.querySelector('.header .circle').classList.add(iconList[id]);
-        document.querySelector('.header .circle').classList.remove(iconList[prevId]);
+        var headerCircleElem = document.querySelector('.header .circle');
+        headerCircleElem.classList.add(iconList[id]);
+        headerCircleElem.classList.remove(iconList[prevId]);
         loadHTML(id, function(response) {
             injectHTML(response);
             injectJS(id);
-            document.querySelector(".container").classList.remove("blur");
         });
         prevElem.classList.remove('active-tab');
         this.classList.add('active-tab');
