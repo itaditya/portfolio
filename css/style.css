@@ -152,9 +152,10 @@ li {
 .profile-pic {
     /*height: 220px !important;*/
     width: 220px !important;
-    margin-left: 50px;
+    margin-left: 100px;
     border-radius: 50%;
-    /*background: #000;*/
+    box-shadow: 1px 6px 12px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 6px 12px 2px rgba(0, 0, 0, 0.2);
 }
 
 .text {
@@ -436,6 +437,7 @@ div[role="mongo"] .skill-logo {
 
 .main-carousel {
     height: 100%;
+    padding-bottom: 40px;
 }
 
 .carousel-cell {
@@ -1086,8 +1088,8 @@ div[role="mongo"] .skill-logo {
         position: absolute;
         left: 50%;
         margin-left: -60px;
-        border-radius: 100%;
-        background: #34404C;
+        /*border-radius: 100%;*/
+        /*background: #34404C;*/
         box-shadow: 1px 6px 12px 2px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 1px 6px 12px 2px rgba(0, 0, 0, 0.2);
     }
